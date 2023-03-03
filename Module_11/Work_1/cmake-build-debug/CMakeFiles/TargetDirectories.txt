@@ -1,0 +1,3 @@
+D:/C++ Learn/Homework_Skillbox/Module_11/Work_1/cmake-build-debug/CMakeFiles/Work_1.dir
+D:/C++ Learn/Homework_Skillbox/Module_11/Work_1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/C++ Learn/Homework_Skillbox/Module_11/Work_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
