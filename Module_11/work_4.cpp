@@ -17,6 +17,7 @@
 
 bool checkWon(const int& countX, const int& countO, const char& winner);
 bool checkNobody(const int& countX, const int& countO, const int &lengthField);
+char getWinner(const std::string &gameField, int &index, int stepIndex);
 
 int main() {
 
@@ -24,27 +25,21 @@ int main() {
 //    std::string secondLine = "OXO";
 //    std::string thirdLine = "OOO";
 
-
 //    std::string firstLine = "X..";
 //    std::string secondLine = ".X.";
 //    std::string thirdLine = "OO.";
-
-
 
 //    std::string firstLine = "XXO";
 //    std::string secondLine = "OOX";
 //    std::string thirdLine = "XOX";
 
-
 //    std::string firstLine = "XO.";
 //    std::string secondLine = "XO.";
 //    std::string thirdLine = "X.O";
 
-
 //    std::string firstLine = "OX.";
 //    std::string secondLine = "XOX";
 //    std::string thirdLine = "X.O";
-
 
 //    std::string firstLine = "..X";
 //    std::string secondLine = "OX.";
@@ -77,23 +72,17 @@ int main() {
 
             // проверяем каждую строку на победителя
             if (i % lengthLine == 0 && i <= lengthField - lengthLine && gameField[i] != '.' && winner == '-'){
-                if (gameField[i] == gameField[i + 1] && gameField[i] == gameField[i + 2]){
-                    winner = gameField[i];
-                }
+                winner = getWinner(gameField, i, 1);
             }
 
             // проверяем каждый столбец на победителя
             if (i <= lengthLine - 1 && gameField[i] != '.' && winner == '-') {
-                if (gameField[i] == gameField[i + lengthField - lengthLine * 2] && gameField[i] == gameField[i + lengthField - lengthLine * 2]){
-                    winner = gameField[i];
-                }
+                winner = getWinner(gameField, i, 3);
             }
 
             // проверяем диагональ на победителя
-            if (i == 0 || i == lengthLine - 1 && gameField[i] != '.' && winner == '-') {
-                if (gameField[i] == gameField[lengthField / 2] && gameField[i] == gameField[lengthField - 1 - i]){
-                    winner = gameField[i];
-                }
+            if ((i == 0 || i == lengthLine - 1) && gameField[i] != '.' && winner == '-') {
+                winner = getWinner(gameField, i, 4 - i);
             }
         } else {
             incorrect = true;
@@ -137,6 +126,13 @@ bool checkWon(const int& countX, const int& countO, const char& winner) {
 
 bool checkNobody(const int& countX, const int& countO, const int &lengthField) {
     return (countO + countX <= lengthField) && countO == countX || countX - countO == 1 || countO - countX == 1;
+}
+
+char getWinner(const std::string &gameField, int &index, int stepIndex) {
+
+    if (gameField[index] == gameField[index + stepIndex] && gameField[index] == gameField[index + (stepIndex * 2)]) return gameField[index];
+
+    return '-';
 }
 
 
