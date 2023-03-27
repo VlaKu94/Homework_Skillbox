@@ -37,15 +37,12 @@ int main() {
         } else {
             vec.push_back(n);
             for (int i = 0; i < vec.size() - 1; ++i) {
-                if (vec[vec.size() - 1] < vec[i]) {
+                if (vec.back() < vec[i]) {
                     int temp = vec[i];
                     vec[i] = vec.back();
                     vec.back() = temp;
                 }
 
-            }
-            for (int i = 0; i < vec.size(); ++i) {
-                std::cout << vec[i] << std::endl;
             }
         }
 
