@@ -13,7 +13,8 @@ int main() {
     std::string word = "hello";
 
     std::ifstream fs;
-    fs.open("words.txt");
+    // путь к файлу, который лежит выше cmake-build-debug
+    fs.open("..\\words.txt");
     int count = 0;
     while(!fs.eof()){
         std::string str;
