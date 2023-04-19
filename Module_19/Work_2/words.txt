@@ -1,0 +1,10 @@
+hello
+privet
+hi
+hello
+hello
+or
+and
+exit
+test
+end line

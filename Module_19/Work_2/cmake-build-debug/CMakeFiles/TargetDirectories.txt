@@ -1,3 +1,0 @@
-C:/C++/Homework_Skillbox/Module_19/Work_2/cmake-build-debug/CMakeFiles/Work_2.dir
-C:/C++/Homework_Skillbox/Module_19/Work_2/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/C++/Homework_Skillbox/Module_19/Work_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
